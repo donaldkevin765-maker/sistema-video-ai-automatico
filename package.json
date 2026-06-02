@@ -1,0 +1,13 @@
+{
+  "name": "sistema-video-ai-automatico",
+  "version": "1.0.0",
+  "description": "AI video generation system - realistic 1000x1000 videos from prompts",
+  "main": "engine/index.js",
+  "scripts": {
+    "generate": "node cli.js",
+    "test": "node test/basic.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.0"
+  }
+}
