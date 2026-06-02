@@ -63,12 +63,13 @@ VIDEO_PROVIDERS=huggingface node cli.js "Gatto che cammina sul tetto"
 STRICT_MODE=true node cli.js "il mio prompt esatto"
 ```
 
-### Google Colab (GPU cloud gratis)
+### Google Colab (GPU cloud gratis — consigliato)
 
-1. Vai su https://colab.research.google.com
-2. Carica `notebooks/Genera_Video_AI_Gratis_Colab.ipynb`
-3. Runtime → Esegui tutto
-4. Scarica il video generato
+Clicca questo link → [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/donaldkevin765-maker/sistema-video-ai-automatico/blob/main/notebooks/Genera_Video_AI_Gratis_Colab.ipynb)
+
+1. Click sul badge ↑ (si apre Colab col notebook già caricato)
+2. Runtime → Esegui tutto
+3. Il video viene generato e scaricato automaticamente
 
 ## Architettura
 
