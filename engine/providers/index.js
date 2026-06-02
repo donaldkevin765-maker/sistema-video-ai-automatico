@@ -1,9 +1,9 @@
 const config = require('../../config')
 
 const providers = {
-  runway: require('./runway'),
-  luma: require('./luma'),
   local: require('./local'),
+  huggingface: require('./huggingface'),
+  replicate: require('./replicate'),
 }
 
 async function generate(prompt, options = {}) {
@@ -34,25 +34,36 @@ async function generate(prompt, options = {}) {
 
   return {
     success: false,
-    error: 'Tutti i provider hanno fallito',
+    error: 'Tutti i provider gratuiti hanno fallito',
     chainAttempted: providerChain,
     errors,
   }
 }
 
 function listProviders() {
-  return Object.keys(providers).map(name => ({
+  return Object.keys(providers).sort().map(name => ({
     name,
     configured: isConfigured(name),
+    free: true,
+    description: getDescription(name),
   }))
 }
 
 function isConfigured(name) {
   switch (name) {
-    case 'runway': return !!config.runway.apiKey
-    case 'luma': return !!config.luma.apiKey
     case 'local': return true
+    case 'huggingface': return !!config.huggingface.token
+    case 'replicate': return !!config.replicate.token
     default: return false
+  }
+}
+
+function getDescription(name) {
+  switch (name) {
+    case 'local': return 'GPU Mac locale (diffusers + MPS) - zero cost, richiede installazione Python'
+    case 'huggingface': return 'Hugging Face Inference API - free tier, rate limited, basta token gratuito'
+    case 'replicate': return 'Replicate cloud - free credits iniziali $5 per nuovi account'
+    default: return ''
   }
 }
 

@@ -5,3 +5,6 @@ tmp/
 *.mp4
 *.webm
 *.mov
+notebooks/.ipynb_checkpoints/
+__pycache__/
+*.pyc

@@ -1,11 +1,12 @@
 {
   "name": "sistema-video-ai-automatico",
   "version": "1.0.0",
-  "description": "AI video generation system - realistic 1000x1000 videos from prompts",
+  "description": "Generazione video AI realistici 1000x1000 - 100% gratuito (diffusers locale, HF API, Replicate credits, Colab)",
   "main": "engine/index.js",
   "scripts": {
     "generate": "node cli.js",
-    "test": "node test/basic.js"
+    "test": "node test/basic.js",
+    "colab": "echo 'Apri notebooks/Genera_Video_AI_Gratis_Colab.ipynb su Google Colab'"
   },
   "dependencies": {
     "dotenv": "^16.4.0"
